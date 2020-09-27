@@ -18,14 +18,15 @@ public class rocket : MonoBehaviour
     
     bool thrustOn = false;
 
-    // Make sure particle hits don't run on start
     enum State { Alive, Dying, Transceding };
     State state = State.Alive;
 
     void Start()
     {
+        // Make sure particle hits don't run on start
         explosion.Stop();
         fireWorks.Stop();
+        
         rigidBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
     }
